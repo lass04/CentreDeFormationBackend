@@ -1,0 +1,24 @@
+{
+  "name": "centredeformationbackend",
+  "version": "1.0.0",
+  "description": "Second try",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lass04/CentreDeFormationBackend.git"
+  },
+  "author": "LassouedMohamedyassine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lass04/CentreDeFormationBackend/issues"
+  },
+  "homepage": "https://github.com/lass04/CentreDeFormationBackend#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
