@@ -6,6 +6,8 @@ import candidatRouter from "./routes/candidat.route.js";
 
 const app = express();
 
+app.use(express.json());
+
 app.use("/api/v2/candidats",candidatRouter);
 app.use("/api/v2/formations",formationRouter);
 app.use("/api/v2/formateurs",formateurRouter);

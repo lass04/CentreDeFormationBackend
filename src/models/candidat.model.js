@@ -24,8 +24,8 @@ const candidatSchema = new Schema({
     cin:{
         type: Number,
         required: true,
-        min:8,
-        max:8,
+        minlength:8,
+        maxlength:8,
         trim: true,
         unique: true
     },

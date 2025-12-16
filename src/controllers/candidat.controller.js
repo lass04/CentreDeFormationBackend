@@ -11,13 +11,22 @@ const createCandidat = async (req,res) => {
             message: "All fields are required"
         });
 
-    const findCandidat = Candidat.findOne({cin:cin});
+    const findCandidat = await Candidat.findOne({cin:cin});
     if(findCandidat)
         return res.status(400).json({message: "Candidat already exists"});
 
+    const createCandidat = await Candidat.create({
+        nom:nom,
+        prenom:prenom,
+        email:email,
+        photo:photo,
+        cin:cin,
+        motdepasse:motdepasse
+    });
+
     res.status(201).json({
         message: "Candidat successfully created",
-        findCandidat
+        createCandidat
     });
 
     }catch(error) {
@@ -28,6 +37,29 @@ const createCandidat = async (req,res) => {
     }
 }
 
+const getCandidats = async (req,res) => {
+    
+    try{
+        const candidats = await Candidat.find();
+        if(!candidats)
+            return res.status(400).json({
+        message:"Cannot get candidats"
+    });
+
+    res.status(200).json({
+        message: "All Candidats",
+        candidats
+    });
+
+    }catch(error){
+        return res.status(500).json({
+            message:"Internal Server Error",
+            error:error.messsage
+        })
+    }
+}
+
 export {
-    createCandidat
+    createCandidat,
+    getCandidats
 }
