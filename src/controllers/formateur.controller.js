@@ -63,13 +63,7 @@ const updateFormateur = async (req,res) => {
 const deleteFormateur = async (req,res) => {
     try{
 
-        const { cin } = req.body;
-
-        if(!cin)
-            return res.status(400).json({
-              message: "No data about Formateur"});
-
-        const deleteFormateur = await Formateur.findByIdAndDelete(req.params.id,req.body,{new:true});
+        const deleteFormateur = await Formateur.findByIdAndDelete(req.params.id);
         if(!deleteFormateur)
             return res.status(404).json({message: "Formateur Not found"});
 
@@ -88,9 +82,9 @@ const deleteFormateur = async (req,res) => {
 }
 
 const getFormateurs = async (req,res) => {
+    
     try{
 
-        
         const formateurs = await Formateur.find();
         if(!formateurs)
             return res.status(404).json({message: "Cannot get Formateurs"})

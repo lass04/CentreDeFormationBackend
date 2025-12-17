@@ -65,13 +65,7 @@ const deleteCandidat = async (req,res) => {
 
         try{
         
-                const { cin } = req.body;
-        
-                if(!cin)
-                    return res.status(400).json({
-                      message: "No data provided about Candidat"});
-        
-                const deleteCandidat = await Candidat.findByIdAndDelete(req.params.id,req.body,{new:true});
+                const deleteCandidat = await Candidat.findByIdAndDelete(req.params.id);
                 if(!deleteCandidat)
                     return res.status(404).json({message: "Candidat Not found"});
         
