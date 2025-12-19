@@ -4,6 +4,7 @@ Technologies :
 * Node.js
 * Express
 * MongoDB Atlas
+  
 Features :
 * Bcrypt Password Hashing
 * JWT Authentication & Authorization
