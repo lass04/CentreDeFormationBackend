@@ -18,6 +18,7 @@ const candidatSchema = new Schema({
     email:{
         type: String,
         required: true,
+        unique:true,
         trim: true,
         lowercase: true
     },
@@ -39,6 +40,13 @@ const candidatSchema = new Schema({
         required: true,
         minlength: 8,
         maxlength: 15
+    },
+    role:{
+        type:String,
+        default:"user"
+    },
+    refreshToken:{
+        type:String
     }
     
 },
