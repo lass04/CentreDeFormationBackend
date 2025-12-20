@@ -38,12 +38,12 @@ const candidatSchema = new Schema({
     motdepasse:{
         type: String,
         required: true,
-        minlength: 8,
-        maxlength: 15
+        minlength: 8 
     },
     role:{
         type:String,
-        default:"user"
+        default:"user",
+        required:true
     },
     refreshToken:{
         type:String
@@ -59,10 +59,12 @@ candidatSchema.pre("save",async function(){
     if(!this.isModified('motdepasse'))
         return;
     this.motdepasse = await bcrypt.hash(this.motdepasse,10);
+    
 })
 
-candidatSchema.methods.comparerMotdePasse = async function(password){
+candidatSchema.methods.comparerMotDePasse = async function(password){
     return await bcrypt.compare(password,this.motdepasse);
+    
 }
 
 export const Candidat = mongoose.model("Candidat",candidatSchema);
