@@ -10,5 +10,6 @@ Features :
 * JWT Authentication & Authorization
 * REST APIs
 * CRUD Operations
+* Gemini AI Integration for Statistics
   
 This is a basic beginner project. Going Forward..
