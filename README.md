@@ -19,6 +19,7 @@ Features :
 * HTTP security headers using Helmet
 * Environment variable management with dotenv
 * API testing using Postman
+* Helmet Middleware for secure Http Headers (preventing XSS,Clickjacking...)
 
   
 This is a basic beginner project. Going Forward..
