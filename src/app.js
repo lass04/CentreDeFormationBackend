@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.route.js";
 import aiRouter from "./routes/ai.route.js";
 import cors from "cors";
+import helmet from "helmet";
 
 const app = express();
 
@@ -14,6 +15,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(helmet());
 
 app.use(cors({
  origin:"http://localhost:4200",
