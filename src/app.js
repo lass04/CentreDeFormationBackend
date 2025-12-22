@@ -6,11 +6,23 @@ import candidatRouter from "./routes/candidat.route.js";
 import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.route.js";
 import aiRouter from "./routes/ai.route.js";
+import cors from "cors";
 
 const app = express();
 
+// Express Middlewares
+
 app.use(express.json());
 app.use(cookieParser());
+
+app.use(cors({
+ origin:"http://localhost:4200",
+ methods: ["GET","POST","PUT","DELETE"],
+ allowHeaders: ["Content-Type","Authorizatio"],
+ credentials: true
+}) );
+
+// Routes Declarations 
 
 app.use("/api/v2/candidats",candidatRouter);
 app.use("/api/v2/formations",formationRouter);
