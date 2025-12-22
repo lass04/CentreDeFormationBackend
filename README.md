@@ -8,5 +8,7 @@ Technologies :
 Features :
 * Bcrypt Password Hashing
 * JWT Authentication & Authorization
+* REST APIs
+* CRUD Operations
   
 This is a basic beginner project. Going Forward..
