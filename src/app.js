@@ -5,7 +5,7 @@ import sessionRouter from "./routes/session.route.js";
 import candidatRouter from "./routes/candidat.route.js";
 import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.route.js";
-
+import aiRouter from "./routes/ai.route.js";
 
 const app = express();
 
@@ -17,5 +17,6 @@ app.use("/api/v2/formations",formationRouter);
 app.use("/api/v2/formateurs",formateurRouter);
 app.use("/api/v2/sessions",sessionRouter);
 app.use("/auth",authRouter);
+app.use("/ai",aiRouter);
 
 export default app;

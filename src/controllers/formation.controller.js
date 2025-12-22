@@ -98,9 +98,19 @@ const getFormations = async (req,res) => {
     }
 }
 
+const insertManyFormations = async (req,res) => {
+    try{
+        const insert = await Formation.insertMany(req.body);
+        res.sendStatus(201).json({message:"Inserted successfully"});
+    }catch(error){
+        return res.sendStatus(500);
+    }
+}
+
 export {
     createFormation,
     deleteFormation,
     updateFormation,
-    getFormations
+    getFormations,
+    insertManyFormations
 }

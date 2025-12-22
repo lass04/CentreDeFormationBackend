@@ -101,9 +101,19 @@ const getSessions = async (req,res) => {
     }
 }
 
+const insertManySessions = async (req,res) => {
+    try{
+        const insert = Session.insertMany(req.body);
+        res.status(201).json({message:"Inserted successfully "});
+    }catch(error){
+        return res.sendStatus(500);
+    }
+}
+
 export {
     createSession,
     deleteSession,
     updateSession,
-    getSessions
+    getSessions,
+    insertManySessions
 }
