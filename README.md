@@ -11,5 +11,7 @@ Features :
 * REST APIs
 * CRUD Operations
 * Gemini AI Integration for Statistics
+* Cors Configuration
+* Rate Limiting
   
 This is a basic beginner project. Going Forward..
